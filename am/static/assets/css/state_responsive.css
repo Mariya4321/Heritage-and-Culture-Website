@@ -1,0 +1,152 @@
+#heritage-sites {
+    padding: 50px 0;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#heritage-sites h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Heritage Row */
+.heritage-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Allow wrapping for mobile view */
+}
+
+/* Left Side Card */
+.heritage-card.left,
+.heritage-card.right {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px; /* Space between rows */
+    padding: 10px; /* Ensure some space inside cards */
+}
+
+.heritage-card.left img,
+.heritage-card.right img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.heritage-card.left .card-content,
+.heritage-card.right .card-content {
+    padding: 20px;
+    text-align: left;
+    width: 50%;
+    box-sizing: border-box; /* Ensure padding does not affect width calculation */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.heritage-card.left .card-content h3,
+.heritage-card.right .card-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.heritage-card.left .card-content p,
+.heritage-card.right .card-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.heritage-card.left .card-content button,
+.heritage-card.right .card-content button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #2E86C1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.heritage-card.left .card-content button:hover,
+.heritage-card.right .card-content button:hover {
+    background-color: #1D6B9A;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+    /* Heritage Heading */
+    #heritage-sites h2 {
+        font-size: 2rem;
+    }
+
+    /* Adjust Row Layout */
+    .heritage-row {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+    }
+
+    /* Heritage Cards */
+    .heritage-card.left,
+    .heritage-card.right {
+        width: 90%; /* Cards take most of the screen width */
+        margin-bottom: 30px; /* Space between cards */
+        flex-direction: column; /* Stack image on top and text below */
+    }
+
+    /* Adjust Image */
+    .heritage-card.left img,
+    .heritage-card.right img {
+        width: 100%; /* Make images full width */
+        height: 250px; /* Set a fixed height for mobile */
+        object-fit: cover;
+    }
+
+    /* Card Content */
+    .heritage-card.left .card-content,
+    .heritage-card.right .card-content {
+        width: 100%; /* Make content take the whole card width */
+        text-align: center; /* Center text */
+        padding: 15px; /* Reduce padding for mobile */
+    }
+
+    .heritage-card.left .card-content h3,
+    .heritage-card.right .card-content h3 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .heritage-card.left .card-content p,
+    .heritage-card.right .card-content p {
+        font-size: 0.95rem; /* Adjust text size */
+    }
+
+    .read-more-btn {
+        font-size: 14px; /* Reduce button size */
+    }
+}
+
+/* Very small screen (less than 480px) */
+@media (max-width: 480px) {
+
+    .heritage-card.left .card-content h3,
+    .heritage-card.right .card-content h3 {
+        font-size: 1.2rem; /* Smaller headings */
+    }
+
+    .heritage-card.left .card-content p,
+    .heritage-card.right .card-content p {
+        font-size: 0.85rem; /* Smaller paragraphs */
+    }
+
+    .read-more-btn {
+        font-size: 12px; /* Smaller button size */
+    }
+}
+

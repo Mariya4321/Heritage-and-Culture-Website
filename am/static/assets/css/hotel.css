@@ -1,0 +1,118 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+}
+
+    header h1 {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    gap: 20px;
+    justify-content: center; /* Center cards on the screen */
+    margin: 20px auto;
+    padding: 0 10px; /* Add padding for small screens */
+}
+
+.card {
+    flex: 1 1 300px; /* Allow cards to grow and shrink */
+    max-width: 300px; /* Limit the maximum width of each card */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.3), -12px -12px 24px rgba(255, 255, 255, 0.5);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+.card-content {
+    padding: 1.5rem;
+}
+
+    .card-content h4 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .card-content .rating {
+        color: #ffa41b;
+        font-size: 1rem;
+    }
+
+    .card-content .price {
+        font-size: 1.3rem;
+        color: maroon;
+        font-weight: bold;
+    }
+
+    .card-content button {
+        background: #0a2351;
+        color: #fff;
+        border: none;
+        padding: 0.8rem 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-size: 1rem;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+        .card-content button:hover {
+            background: #0a2351;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .card {
+        flex: 1 1 100%; /* Each card takes the full width on small screens */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Adjust header font size for small screens */
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+        .card-content h4 {
+            font-size: 1.5rem;
+        }
+
+        .card-content .price {
+            font-size: 1.1rem;
+        }
+}
