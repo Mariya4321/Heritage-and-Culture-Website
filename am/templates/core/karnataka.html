@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Karnataka {% endblock %}
+
+{% block extra_css %}
+
+
+    <!-- State Image Slider Section -->
+    <section id="state-slider">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://via.placeholder.com/1500x800/FF5733/FFFFFF?text=State+Image+1" alt="State Image 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1500x800/2E86C1/FFFFFF?text=State+Image+2" alt="State Image 2">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1500x800/28B463/FFFFFF?text=State+Image+3" alt="State Image 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- State Description Section -->
+    <section id="state-description">
+        <div class="state-container">
+            <div class="state-text">
+                <h2>Karnataka</h2>
+                <p>Karnataka is a state in the southwestern region of India. It is home to ancient temples, historical forts, and stunning natural landscapes. Famous for its unique blend of culture and heritage, Karnataka offers various iconic tourist spots like the Hampi ruins and the beautiful Badami caves.</p>
+                <p>Explore the state's rich cultural history, architectural wonders, and scenic beauty by visiting its heritage sites.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Sites in Z-shaped Layout -->
+    <section id="heritage-sites">
+        <h2>Heritage Sites in Karnataka</h2>
+
+        <!-- Heritage Site 1 - Left side -->
+        <div class="heritage-row">
+            <div class="heritage-card left">
+                <img src="./assets/images/states/karnataka.jpg" alt="Hampi">
+                <div class="card-content">
+                    <h3>Hampi</h3>
+                    <p>A UNESCO World Heritage Site, Hampi is a historic village known for its ancient temples, ruins, and architecture from the Vijayanagara Empire.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heritage Site 2 - Right side -->
+        <div class="heritage-row">
+            <div class="heritage-card right">
+                <img src="./assets/images/states/maharashtra.webp" alt="Badami">
+                <div class="card-content">
+                    <h3>Badami</h3>
+                    <p>Badami is famous for its rock-cut temples and was once the capital of the Chalukya dynasty. It is known for its ancient ruins and temples carved into cliffs.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heritage Site 3 - Left side -->
+        <div class="heritage-row">
+            <div class="heritage-card left">
+                <img src="./assets/images/states/rajasthan.jpg" alt="Chitradurga">
+                <div class="card-content">
+                    <h3>Chitradurga Fort</h3>
+                    <p>Chitradurga Fort is a historical fort located in the Chitradurga district. It's known for its architecture and the famous legend of Onake Obavva's bravery.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heritage Site 4 - Right side -->
+        <div class="heritage-row">
+            <div class="heritage-card right">
+                <img src="./assets/images/states/up.jpg" alt="Bijapur">
+                <div class="card-content">
+                    <h3>Bijapur</h3>
+                    <p>Bijapur is known for its stunning historical buildings and tombs. The Gol Gumbaz is one of its most iconic monuments.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    $content = ob_get_clean();
+<?php
+$base_url = '/'; // Adjust if your project is in a subfolder, e.g., '/project/'
+?>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- META DATA -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ameya Bharat</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/logo.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css" />
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/header.css" />
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/cart.css" />
+</head>
+
+
+    <!-- HEADER -->
+    <header class="top-area">
+        <div class="header-area">
+            <div class="logo">
+                <a href="index.html">
+                    Ameya<span>BHARAT</span>
+                </a>
+            </div>
+            <div class="main-menu">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" id="navbarToggle">
+                        <i class="fa fa-bars" style="font-size:36px"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#pack">Customize Packages</a></li>
+                        <li><a href="./ecommerce.html">E-commerce</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li>
+                            <button class="book-btn">Login</button>
+                        </li>
+                        <div class="cart-icon" onclick="toggleCart()">
+                            <i class="fa fa-shopping-cart" style="font-size: x-large; color: white;"></i>
+                            <span class="cart-count" id="cart-count">0</span>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <?php echo $content ?? 'No content available'; ?>
+
+    
+    <footer id="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Discover the rich heritage, culture, and landmarks of India. Explore, learn, and experience the beauty of Indian traditions with us.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./states_selection.html">Destinations</a></li>
+                <li><a href="./culture.html">Culture</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@heritageindia.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Address: 123 Heritage Lane, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Heritage of India. All rights reserved. | Designed with ❤ by [Your Name]</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-container" id="cart">
+        <div class="cart-header">
+            Your Cart
+            <button onclick="toggleCart()" style="background: transparent; border: none; color: white; font-size: large;">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+        </div>
+    </div>
+    <script src="./assets/js/cart.js"></script>
+
+{% endblock %}

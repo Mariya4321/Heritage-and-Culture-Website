@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Maharashtras Tradition {% endblock %}
+
+{% block extra_css %}
+
+
+    <link rel="stylesheet" href="/static/assets/css/states.css">
+    <link rel="stylesheet" href="/static/assets/css/states_main.css">
+    <link rel="stylesheet" href="/static/assets/css/state_responsive.css">
+    <style>
+        
+.Card {
+  display: flex;
+  margin-left: 11.5%;
+  background-color: antiquewhite;
+
+  width: 1000px;
+  height: 700px;
+  margin-top: 5%;
+  border-radius: 20px;
+}
+
+.Detail {
+  color: black;
+  margin-left: 25px;
+}
+
+p {
+  margin-top: 30px;
+}
+
+.image {
+  height: 500px;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+
+.buy {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #3f8cea;
+  color: aliceblue;
+  box-shadow: 0 5px #999;
+}
+.buy:hover {
+  background-color: #3e8e41;
+}
+
+.buy:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.add {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: #3f8cea;
+  color: aliceblue;
+  box-shadow: 0 5px #999;
+}
+.add:hover {
+  background-color: #3e8e41;
+}
+
+.add:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+        </style>
+
+
+
+
+<section id="hero">
+    <div class="slider">
+        <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+        <div class="slides">
+            <div class="slide active">
+                <img src="/static/assets/images/states/slider.jpg" alt="Heritage Site 1">
+            </div>
+            <div class="slide">
+                <img src="/static/assets/images/states/india_gate.jpeg" alt="Heritage Site 2">
+            </div>
+            <div class="slide">
+                <img src="/static/assets/images/states/pratapgadh.jpg" alt="Heritage Site 3">
+            </div>
+        </div>
+        <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+        <div class="hero-text">
+            <h1 style="color:white; font-size:xx-large;">EXPLORE THE CULTURE OF MAHARASHTRA</h1>
+        </div>
+    </div>
+</section>
+
+
+<div class="Card">
+    <div>
+      <img src="https://www.swordsuk.co.uk/cdn/shop/products/2_5eff5592-6bde-464d-a4ef-40900d556826.jpg?v=1675578513&width=600" class="image" />
+    </div>
+
+    <div class="Detail">
+      <div>
+        <h1>Clothing</h1>
+        <p>
+        When we talk about Maharashtra and its people, an image immediately comes up in our minds of local Maharashtrians in their traditional wears. The clothes or the traditional costumes of Maharashtra are very realistic and practical in its approach.
+
+The occupation of the majority of people in Maharashtra is agriculture. People living on the Konkan Coast- the Konkanis are involved in fishing.  Both of these activities require a lot of labour work. The people are to work hours in the sun and move around from one place to the other. Thus they wear clothes that made it easier for them to do so. In many Indian cultures, we see that women do not work outside the house. However, in Maharashtra, some did participate in various outdoor activities and even helped in agricultural activities and thus, like men, preferred to wear what made them able to move around freely and feel comfortable.
+        </p>
+        <h2>Maharashtrian Attire For Men </h2>
+
+        <p>
+        The men in Maharashtra usually we a dhoti. A dhoti is a single piece of cloth that is tucked around one's waist, and it covers the entire leg till the ankle.
+</p>
+<span class="hidden-content">
+<p> Dhotis are secured by making five tucks on each side, and then the loose ends are put in at the back. Dhotis are usually saffron or cream or white in colour. Dhotis are an unstitched piece of clothing that do not require any proper measurements as one could make it however tight or loose they wished it to be.
+
+Maharashtrians usually have the same style for everything - work or celebration.</p> 
+
+<p>Therefore their clothes were made comfortable. Nagpur, a city in Maharashtra, is famous for its dhotis.
+        </p>
+
+        <h2>>Maharashtrian Attire For Women</h2>
+        <p>
+        Women wear sarees that are 9 yards long. The saree is tucked in the middle giving it a similar look to the dhoti. The rest of the saree is wrapped around the upper body of the women. This type of saree is usually called Lugade. There were many variations in how women wear their saree. Some only wear knee length sarees. Some wear it in a skirt manner without the tuck in the middle. But the 9-yard saree is the traditional costume of women in Maharashtra.
+        </p>
+</span>
+<button class="read-more-btn">Read More</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/assets/js/states_main.js"></script>
+<script src="/static/assets/js/states.js"></script>
+<script src="/static/assets/js/read_more.js"></script>
+
+{% endblock %}

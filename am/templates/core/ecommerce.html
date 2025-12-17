@@ -1,0 +1,346 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}ecommerce{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'assets/css/states_main.css' %}">
+<link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/logo.jpeg' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}" />
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+        background-color: #232f3e;
+        color: white;
+        margin-top: 2%;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .product-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 420px;
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .product-card h2 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .product-card p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .button-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        gap: 10px;
+    }
+
+    .product-card button,
+    .desc-button {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .product-card button {
+        background-color: #ff9900;
+        color: white;
+    }
+
+    .product-card button:hover {
+        background-color: #e68a00;
+    }
+
+    .desc-button {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .desc-button:hover {
+        background-color: #0056b3;
+    }
+
+    .filter-section {
+        padding: 1rem 2rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+    }
+
+    .filter-section select,
+    .filter-section input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .filter-section button {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: linear-gradient(to right, #ff6347, #ff4500);
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .filter-section button:hover {
+        background: linear-gradient(to right, #ff4500, #ff6347);
+    }
+
+    @media (max-width: 768px) {
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .filter-section {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    /* Description Slide Panel */
+    .desc-slider {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: #FFF8DC;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    font-family: 'Poppins', sans-serif;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.3s;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.desc-slider.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.desc-slider .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #ff0000;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.desc-slider .desc-content {
+    padding: 60px 20px 20px 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.desc-slider .desc-content img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 15px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 4px solid ;
+}
+
+.desc-slider .desc-content h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: center;
+    font-family:Copperplate;
+}
+
+.desc-slider .desc-content p {
+    font-size: 1rem;
+    font-family:Copperplate;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.desc-slider .desc-content .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.desc-slider .desc-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.desc-slider .desc-content::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 5px;
+}
+
+.desc-slider .desc-content::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<script>
+ 
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterButton = document.querySelector(".filter-section button");
+        const stateSelect = document.querySelector("#state");
+        const productCards = document.querySelectorAll(".product-card");  // ✅ Add this line
+
+        filterButton.addEventListener("click", () => {
+            const selectedState = stateSelect.value.toLowerCase();
+            let hasVisibleProducts = false;
+
+            productCards.forEach((card) => {
+                const productState = card.getAttribute("data-state").toLowerCase();
+
+                if (selectedState === "" || productState.includes(selectedState)) {
+                    card.style.display = "block";
+                    hasVisibleProducts = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (selectedState && hasVisibleProducts) {
+                const stateSection = document.querySelector(`#${selectedState}`);
+                if (stateSection) {
+                    stateSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+    });
+
+    function showDescription(title, desc, imgUrl, price) {
+        document.getElementById('desc-title').innerText = title;
+        document.getElementById('desc-text').innerText = desc;
+        document.getElementById('desc-img').src = imgUrl;
+        document.getElementById('desc-price').innerText = "₹" + price;
+        document.getElementById('desc-slider').classList.add('active');
+    }
+
+    function closeDescription() {
+        document.getElementById('desc-slider').classList.remove('active');
+    }
+
+
+</script>
+
+<header style="background-image: url({% static 'assets/images/ecommerce/design.jpg' %});">
+    <h1>Bharat Emporium</h1>
+</header>
+
+<section class="filter-section">
+    <select name="state" id="state">
+        <option value="">Select State</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="gujarat">Gujarat</option>
+        <option value="delhi">Delhi</option>
+    </select>
+
+
+    <button>Filter</button>
+</section>
+
+<div id="maharashtra">
+    <h2 style="margin-left: 22px; font-size: xx-large;"><b><u>Maharashtra</u></b></h2>
+</div>
+
+<main class="product-grid">
+    {% for product in products %}
+    <div class="product-card" data-state="maharashtra" data-category="fashion">
+        <img src="{{ product.img.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p><b>₹{{ product.price }}</b></p>
+        <div class="action">
+           <button><a href="{%url 'add_to_cart' product.pk %}" class="add_to_cart btn btn-default">Add to Cart</a></button>
+            <button class="desc-button"
+                onclick="showDescription('{{ product.name }}', `{{ product.desc }}`, '{{ product.img.url }}', {{ product.price }})">
+                Description
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</main>
+
+
+
+<!-- Description Slide Panel -->
+<div class="desc-slider" id="desc-slider">
+    <button class="close-btn" onclick="closeDescription()">&times;</button>
+    <div class="desc-content">
+        <img id="desc-img" src="" alt="Product Image">
+        <h2 id="desc-title">Product Title</h2>
+        <p id="desc-text">Product description goes here.</p>
+        <div class="price" id="desc-price">₹0</div>
+    </div>
+</div>
+
+
+ {% endblock %}

@@ -1,0 +1,109 @@
+{% load static %}
+{% load cart_temp %}
+
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+</style>
+
+<header class="top-area">
+  <div class="header-area">
+    <div class="logo">
+      <a href="{% url 'index' %}">
+        Ameya<span>BHARAT</span>
+      </a>
+    </div>
+    <div class="main-menu">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" id="navbarToggle">
+          <i class="fa fa-bars" style="font-size:36px"></i>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#pack">Customize Packages</a></li>
+          <li><a href="{% url 'ecommerce' %}">E-commerce</a></li>
+          <li><a href="#blog">Blog</a></li>
+
+          {% comment %} cart icon and count {% endcomment %}
+          {% if request.user.is_authenticated %}
+            <li>
+              <div class="cart-icon"  >
+                 <a href="{% url 'order_list_cart' %} "style="display: inline-flex;" >
+                    <i class="fa fa-shopping-cart" style="font-size:large; color: white;"></i>
+                    
+                    <div style="color:red; margin-left: 5px;">{{ request.user | cart_item_count }}</div>
+                 </a>
+              </div>
+            </li>
+
+            <li>
+              <div class="dropdown" style="display: flex; flex-direction: column; align-items: center; height: 45px;">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="white" stroke-width="4" fill="#4d4e54"/>
+                    <circle cx="50" cy="35" r="12" fill="white"/>
+                    <path d="M30 75 C30 60, 70 60, 70 75" fill="white"/>
+                  </svg>
+                </a>
+                <div class="dropdown-content">
+                  <a href="{% url 'profile' %}">Profile</a>
+                  <hr class="dropdown-divider">
+                  <a href="{% url 'logout' %}">Sign out</a>
+                </div>
+                <p style="color: white; font-size: 14px; margin: 1px 0 0; margin-right:1px;">
+                  Welcome, {{ user.username }}
+                </p>
+              </div>
+            </li>
+          {% else %}
+            <li>
+              <button class="book-btn"><a href="{% url 'login' %}">Login</a></button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

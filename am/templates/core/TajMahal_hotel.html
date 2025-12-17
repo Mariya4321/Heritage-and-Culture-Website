@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Harvest Festivals {% endblock %}
+
+{% block extra_css %}
+
+
+    <link rel="stylesheet" href="/static/assets/css/hotel.css">
+
+
+
+    <header>
+        <h1>Hotels Near Taj Mahal</h1>
+    </header>
+    <section>
+        <div class="container">
+
+            <div class="cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="/static/assets/images/hotel/tm1.webp" alt="Hotel 1">
+                    <div class="card-content">
+                        <h3 style="color: maroon;">THE TAJ VILAS AGRA</h3>
+                        <p>5 minutes from Taj Mahal</p>
+                        <div class="rating">Rating: ★★★★☆ <span>4.1</span></div>
+                        <p class="price">₹3500/night</p>
+                        <button>
+                            <a href="https://www.google.com/travel/search?q=hotels%20
+                        near%20taj%20mahal%20agra&g2lb=4899568%2C4899570%2C4965990
+                        %2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72
+                        414906%2C72421566%2C72471280%2C72472051%2C72481459%2C7248565
+                        8%2C72499705%2C72560029%2C72573224%2C72614662%2C72616120%2C7
+                        2619927%2C72628720%2C72647020%2C72648289%2C72658035%2C726860
+                        36%2C72760082%2C72803964%2C72808078%2C72832973%2C72847700&hl=
+                        en-IN&gl=in&ssta=1&ts=CAESCAoCCAMKAggDGhwSGhIUCgcI6A8QDBgTEgc
+                        I6A8QDBgUGAEyAhAAKgcKBToDSU5S&qs=CAEyFENnc0ktTXY4ajZPTXZmM2JB
+                        UkFCOApCCRE1sQnGADPWO0IJEe3W-XEb1tEdQgkRN3aoqTTuJVRaUzJRqgFOE
+                        AEqCiIGaG90ZWxzKAAyHhABIhrmGw3ZyD20xTfY7KSJk9bG9pGxQCXAiiM5DT
+                        IeEAIiGmhvdGVscyBuZWFyIHRhaiBtYWhhbCBhZ3Jh&ap=aAG6AQhvdmVydml
+                        ldw&ictx=111&ved=0CAAQ5JsGahcKEwjYlv-20LCKAxUAAAAAHQAAAAAQEA"
+                               style="color: white; text-decoration: none;">
+                                Book Now
+                            </a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="/static/assets/images/hotel/tm2.webp" alt="Hotel 2">
+                    <div class="card-content">
+                        <h3 style="color:maroon;">HOTEL ROYAL PHOENIX</h3>
+                        <p>10 minutes from Taj Mahal</p>
+                        <div class="rating">Rating: ★★★★☆ <span>4.5</span></div>
+                        <p class="price">₹2000/night</p>
+                        <button>
+                            <a href="https://www.google.com/travel/search?q=hotels%20near%20taj%20mahal%20agra&g2lb=4899568%2C4899570%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72481459%2C72485658%2C72499705%2C72560029%2C72573224%2C72614662%2C72616120%2C72619927%2C72628720%2C72647020%2C72648289%2C72658035%2C72686036%2C72760082%2C72803964%2C72808078%2C72832973%2C72847700&hl=en-IN&gl=in&ssta=1&ts=CAESCAoCCAMKAggDGh4SHBIUCgcI6A8QDBgTEgcI6A8QDBgUGAEyBAgAEAAqBwoFOgNJTlI&qs=CAEyKENob0k4Yk9IMHUteHBNcTBBUm9OTDJjdk1URnVlbk5zZEdKNFpoQUI4CkIJETWxCcYAM9Y7QgkR7db5cRvW0R1CCRE3dqipNO4lVFpTMlGqAU4QASoKIgZob3RlbHMoADIeEAEiGuYbDdnIPbTFN9jspImT1sb2kbFAJcCKIzkNMh4QAiIaaG90ZWxzIG5lYXIgdGFqIG1haGFsIGFncmE&ap=MABoAQ&ictx=111&ved=0CAAQ5JsGahcKEwjYlv-20LCKAxUAAAAAHQAAAAAQbw
+
+                        " style="color: white; text-decoration: none;">
+                                Book Now
+                            </a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="/static/assets/images/hotel/tm3.jpg" alt="Hotel 3">
+                    <div class="card-content">
+                        <h3 style="color: maroon;">HOTEL ATULYAA TAJ</h3>
+                        <p>15 minutes from Taj Mahal</p>
+                        <div class="rating">Rating: ★★★★☆ <span>4.1</span></div>
+                        <p class="price">₹2000/night</p>
+                        <button>
+                            <a href="https://www.google.com/travel/search?q=hotels%20near%20taj%20mahal%20agra&g2lb=4899568%2C4899570%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72481459%2C72485658%2C72499705%2C72560029%2C72573224%2C72614662%2C72616120%2C72619927%2C72628720%2C72647020%2C72648289%2C72658035%2C72686036%2C72760082%2C72803964%2C72808078%2C72832973%2C72847700&hl=en-IN&gl=in&ssta=1&ts=CAESCAoCCAMKAggDGh4SHBIUCgcI6A8QDBgTEgcI6A8QDBgUGAEyBAgAEAAqBwoFOgNJTlI&qs=CAEyKENob0l2TDcxXzluZjZQbVhBUm9OTDJjdk1URnVlSGRzWTNocWVSQUI4CkIJETWxCcYAM9Y7QgkR7db5cRvW0R1CCRE3dqipNO4lVEgAWlMyUaoBThABKgoiBmhvdGVscygAMh4QASIa5hsN2cg9tMU32OykiZPWxvaRsUAlwIojOQ0yHhACIhpob3RlbHMgbmVhciB0YWogbWFoYWwgYWdyYQ&ap=MABoAQ&ictx=111&ved=0CAAQ5JsGahgKEwjYlv-20LCKAxUAAAAAHQAAAAAQiwE
+                        " style="color: white; text-decoration: none;">Book Now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+    

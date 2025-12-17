@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ameya Bharat{% endblock %}</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/logo/logo.jpeg' %}">
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/logo.jpeg'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css'%}" />
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+            {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% include 'includes/header.html' %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'includes/footer.html' %}
+
+    {% block extra_js %}
+  
+    {% endblock %}
+</body>
+</html>
